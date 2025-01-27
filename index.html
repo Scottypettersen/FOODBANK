@@ -7,10 +7,51 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
-        <h1>CSML FOOD BANK</h1>
+        <div class="header-container">
+            <h1>CSML FOOD BANK</h1>
+            <nav class="nav-bar">
+                <!-- Dropdown for About -->
+                <div class="dropdown">
+                    <button class="dropbtn">About</button>
+                    <div class="dropdown-content">
+                        <a href="about.html">About Us</a>
+                        <a href="board-of-directors.html">Board of Directors</a>
+                        <a href="facility.html">Our Facility</a>
+                    </div>
+                </div>
+
+                <!-- Dropdown for Help -->
+                <div class="dropdown">
+                    <button class="dropbtn">Help</button>
+                    <div class="dropdown-content">
+                        <a href="get-help.html">Get Help</a>
+                        <a href="membership-card.html">Membership Card</a>
+                        <a href="hours-location.html">Hours & Location</a>
+                    </div>
+                </div>
+
+                <!-- Dropdown for Support -->
+                <div class="dropdown">
+                    <button class="dropbtn">Support</button>
+                    <div class="dropdown-content">
+                        <a href="ways-to-help.html">Ways to Help</a>
+                        <a href="community-support.html">Community Support</a>
+                        <a href="support-us.html">Support Us</a>
+                    </div>
+                </div>
+
+                <!-- Events -->
+                <a href="special-events.html" class="nav-link">Events</a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="nav-link">Contact Us</a>
+            </nav>
+        </div>
     </header>
 
+    <!-- Subheader -->
     <div class="subheader">
         <h2>Feeding Our Community</h2>
         <div class="subheader-content">
@@ -22,20 +63,21 @@
         </div>
     </div>
 
+    <!-- Main Content -->
     <main class="main-content">
         <section class="left-column">
             <div class="need-food">
-                <h3>Need Food Today?</h3>
+                <h3 class="highlight-text">Need Food Today?</h3>
                 <p>Open Mon-Thu, 11:00 AM - 2:45 PM</p>
-                <a href="#get-help" class="help-button">Get Help now →</a>
+                <a href="get-help.html" class="help-button">Get Help now →</a>
             </div>
 
             <div class="quick-links">
-                <a href="#hours-location" class="link-card" title="Learn about our hours and location">
+                <a href="hours-location.html" class="link-card">
                     <h3>Hours & Location</h3>
                     <p>Find out when and where to visit</p>
                 </a>
-                <a href="#ways-to-help" class="link-card" title="Explore ways to donate or volunteer">
+                <a href="ways-to-help.html" class="link-card">
                     <h3>Ways to Help</h3>
                     <p>Donate or volunteer</p>
                 </a>
@@ -48,78 +90,46 @@
                     <p>Partnership with Unchained Brotherhood</p>
                 </div>
             </div>
-
-            <div class="contact-info">
-                <div class="phone">
-                    <a href="tel:5097658101" title="Call us at (509) 765-8101">(509) 765-8101</a>
-                    <p>Mon-Thu, 7:30 AM - 3:00 PM</p>
-                </div>
-                <div class="address">
-                    <a href="https://maps.google.com/?q=9299+Beacon+Rd+NE+Moses+Lake+WA+98837" title="View our location on Google Maps">
-                        9299 Beacon Rd NE<br>
-                        Moses Lake, WA 98837
-                    </a>
-                </div>
-            </div>
-
-            <div class="stats-footer">
-                <div class="stat">
-                    <h3>48</h3>
-                    <p>Food Pantries</p>
-                </div>
-                <div class="stat">
-                    <h3>6</h3>
-                    <p>Counties</p>
-                </div>
-                <div class="stat">
-                    <h3>33k</h3>
-                    <p>Families served</p>
-                </div>
-            </div>
         </section>
 
         <section class="right-column">
             <figure class="main-image-container">
-                <img 
-                    src="INDEXCOVER.jpg" 
-                    alt="Diverse group of volunteers working together at CSML Food Bank" 
-                    class="main-image"
-                >
+                <img src="INDEXCOVER.jpg" alt="Diverse group of volunteers working together at CSML Food Bank" class="main-image">
             </figure>
         </section>
     </main>
 
-  <!-- Footer -->
-<footer class="footer">
-    <div class="footer-content">
-        <div class="footer-left">
-            <h3>CSML Food Bank</h3>
-            <p>Feeding Our Community. Helping thousands every year.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>CSML Food Bank</h3>
+                <p>Feeding Our Community.</p>
+                <p>Helping thousands every year.</p>
+            </div>
+
+            <div class="footer-middle">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:5097658101">(509) 765-8101</a></li>
+                    <li><a href="mailto:CSML@mlfood.org">CSML@mlfood.org</a></li>
+                    <li><a href="hours-location.html#map">9299 Beacon Rd NE, Moses Lake, WA</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="hours-location.html">Hours & Location</a></li>
+                    <li><a href="ways-to-help.html">Ways to Help</a></li>
+                    <li><a href="get-help.html">Get Help Now</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="footer-middle">
-            <h4>Contact</h4>
-            <ul>
-                <li><a href="tel:5097658101">(509) 765-8101</a></li>
-                <li><a href="mailto:CSML@mlfood.org">CSML@mlfood.org</a></li>
-                <li><a href="https://maps.google.com/?q=9299+Beacon+Rd+NE+Moses+Lake+WA+98837">9299 Beacon Rd NE, Moses Lake, WA</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>&copy; 2025 CSML Food Bank. All rights reserved.</p>
         </div>
-
-        <div class="footer-right">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="#hours-location">Hours & Location</a></li>
-                <li><a href="#ways-to-help">Ways to Help</a></li>
-                <li><a href="#get-help">Get Help Now</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2025 CSML Food Bank. All rights reserved.</p>
-    </div>
-</footer>
-
+    </footer>
 </body>
 </html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Card Application - CSML Food Bank</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <h1>CSML FOOD BANK</h1>
+            <nav class="nav-bar">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="get-help.html" class="nav-link">Get Help</a>
+                <a href="hours-location.html" class="nav-link">Hours & Location</a>
+                <a href="ways-to-help.html" class="nav-link">Ways to Help</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="community-support.html" class="nav-link">Community Support</a>
+                <a href="special-events.html" class="nav-link">Special Events</a>
+                <a href="membership-card.html" class="nav-link active">Membership Card</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Subheader -->
+    <div class="subheader">
+        <h2>Membership Card Application</h2>
+        <p>Apply for your membership card to access CSML services.</p>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="left-column">
+            <div class="content-section">
+                <h3>Why Apply?</h3>
+                <p>
+                    A CSML membership card allows you to access our food bank services and special events.
+                    Our policy ensures everyone who needs food receives it, and there is no cost for our services.
+                </p>
+                <p>Applications are self-declared, following the same guidelines as food stamps. Cards must be renewed annually starting January 1st.</p>
+            </div>
+
+            <div class="content-section">
+                <h3>What You'll Need</h3>
+                <p>To apply for a membership card, you’ll need to provide the following information:</p>
+                <ul>
+                    <li>Your name and age</li>
+                    <li>Number of household members and their ages</li>
+                    <li>Your general location (if no address, let us know)</li>
+                    <li>Phone number and email address</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="right-column">
+            <div class="content-section">
+                <h3>Application Form</h3>
+                <form action="#" method="post" class="membership-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" placeholder="Your Age" required>
+
+                    <label for="household">Number of Household Members:</label>
+                    <input type="number" id="household" name="household" placeholder="Total Household Members" required>
+
+                    <label for="household-ages">Ages of Household Members:</label>
+                    <textarea id="household-ages" name="household-ages" rows="3" placeholder="E.g., 34, 30, 12, 10" required></textarea>
+
+                    <label for="location">General Location:</label>
+                    <input type="text" id="location" name="location" placeholder="City, Area, or Cross Streets" required>
+
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+
+                    <button type="submit" class="submit-button">Submit Application</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>CSML Food Bank</h3>
+                <p>Feeding Our Community.</p>
+                <p>Helping thousands every year.</p>
+            </div>
+
+            <div class="footer-middle">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:5097658101">(509) 765-8101</a></li>
+                    <li><a href="mailto:CSML@mlfood.org">CSML@mlfood.org</a></li>
+                    <li><a href="https://maps.google.com/?q=9299+Beacon+Rd+NE+Moses+Lake+WA+98837">9299 Beacon Rd NE, Moses Lake, WA</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-right">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="hours-location.html">Hours & Location</a></li>
+                    <li><a href="ways-to-help.html">Ways to Help</a></li>
+                    <li><a href="get-help.html">Get Help Now</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 CSML Food Bank. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

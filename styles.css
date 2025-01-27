@@ -1,15 +1,17 @@
-/* Reset and Variables */
+/* ==========================
+   1. Reset and Variables
+========================== */
 :root {
     --primary-green: #4B7B48;
     --secondary-green: #A3B686;
     --background-cream: #FFF8E7;
     --text-gray: #4A4A4A;
     --card-white: #FFFFFF;
-    --highlight-yellow: #F1C40F; /* For badges and prominent stats */
+    --highlight-yellow: #F1C40F;
     --button-blue: #3498DB;
 }
 
-/* General Styles */
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
@@ -19,11 +21,58 @@
 body {
     background-color: var(--background-cream);
     font-family: Arial, sans-serif;
-    margin: 0;
     min-height: 100vh;
 }
 
-/* Header */
+/* ==========================
+   2. Global Styles
+========================== */
+/* Reusable Sections */
+.content-section {
+    margin-bottom: 24px;
+    padding: 16px;
+    background: var(--card-white);
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-green);
+    margin-bottom: 12px;
+}
+
+/* Buttons */
+.button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-blue {
+    background: var(--button-blue);
+    color: white;
+}
+
+.button-blue:hover {
+    background: #2A6BAA;
+}
+
+.button-red {
+    background: #E74C3C;
+    color: white;
+}
+
+.button-red:hover {
+    background: #C0392B;
+}
+
+/* ==========================
+   3. Header and Navigation
+========================== */
 .header {
     background-color: var(--primary-green);
     padding: 20px 5%;
@@ -32,376 +81,166 @@ body {
 .header h1 {
     color: white;
     font-size: 32px;
-    font-weight: normal;
 }
 
-/* Subheader */
+/* Navigation */
+.nav-bar {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--secondary-green);
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: var(--primary-green);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover {
+    background-color: var(--secondary-green);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--card-white);
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.dropdown-content a {
+    color: var(--text-gray);
+    padding: 8px 16px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--secondary-green);
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ==========================
+   4. Subheader
+========================== */
 .subheader {
     background-color: var(--secondary-green);
     padding: 40px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    flex-wrap: wrap;
 }
 
 .subheader h2 {
     color: white;
     font-size: 36px;
-    font-weight: normal;
-    flex: 1;
 }
 
 .stats-badge {
-    background: var(--highlight-yellow);
+    background: var(--button-blue);
     padding: 16px 32px;
     border-radius: 20px;
-    color: var(--primary-green);
+    color: white;
     font-size: 28px;
     font-weight: bold;
-    position: absolute;
-    right: 5%;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-top: 16px;
+    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.explore {
-    color: white;
-    font-size: 18px;
-}
-
-.menu-toggle {
-    font-size: 24px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* Main Content */
+/* ==========================
+   5. Main Content
+========================== */
 .main-content {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     padding: 40px 5%;
 }
 
-/* Need Food Section */
-.need-food {
+/* Cards */
+.link-card,
+.event-card {
     background: var(--card-white);
-    padding: 24px;
+    padding: 16px;
     border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.need-food h3 {
-    color: var(--text-gray);
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-
-.need-food p {
-    color: var(--text-gray);
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.help-button {
-    background: #E74C3C;
-    color: white;
-    text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 24px;
-    display: inline-block;
-    font-size: 16px;
-    transition: background 0.3s ease;
-}
-
-.help-button:hover {
-    background: #C0392B;
-}
-
-/* Quick Links */
-.quick-links {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 24px 0;
-}
-
-.link-card {
-    background: rgba(255, 255, 255, 0.5);
-    padding: 20px;
-    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-decoration: none;
     transition: background 0.3s ease;
 }
 
-.link-card:hover {
+.link-card:hover,
+.event-card:hover {
     background: rgba(255, 255, 255, 0.8);
 }
 
-.link-card h3 {
-    color: var(--text-gray);
-    font-size: 18px;
-    margin-bottom: 8px;
-}
-
-.link-card p {
-    color: var(--text-gray);
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-/* Coming Soon Section */
-.upcoming-events {
-    background: var(--card-white);
-    padding: 24px;
-    border-radius: 12px;
-    margin: 24px 0;
-}
-
-.upcoming-events h4 {
-    color: var(--primary-green);
-    font-size: 18px;
-    margin-bottom: 16px;
-    font-weight: bold;
-}
-
-.event-card {
-    padding: 16px 0;
-    background-color: var(--secondary-green);
-    color: white;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.event-card h5 {
-    font-size: 18px;
-    margin-bottom: 4px;
-    font-weight: bold;
-}
-
-.event-card p {
-    font-size: 14px;
-    opacity: 0.8;
-}
-
-/* Stats Footer (48 Food Pantries, 6 Counties, 33k Families Served) */
-.stats-footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin-top: 40px;
-    padding: 40px 5%;
-    background: var(--primary-green);
-    color: white;
-    border-radius: 12px;
-}
-
-.stat {
-    text-align: center;
-}
-
-.stat h3 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.stat p {
-    font-size: 18px;
-    opacity: 0.8;
-}
-
-/* Contact Info */
-.contact-info {
-    background: rgba(255, 255, 255, 0.5);
-    padding: 20px;
-    border-radius: 12px;
-    margin: 24px 0;
-}
-
-.contact-info p {
-    color: var(--text-gray);
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* Main Image */
-.main-image-container {
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.main-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Footer */
+/* ==========================
+   6. Footer
+========================== */
 .footer {
     background-color: var(--primary-green);
     color: white;
     padding: 40px 5%;
-    text-align: center;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
-.footer-left,
-.footer-middle,
-.footer-right {
+.footer-content div {
     width: 30%;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.footer-left h3 {
-    font-size: 24px;
-    margin-bottom: 12px;
-}
-
-.footer-left p {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-middle h4,
-.footer-right h4 {
-    font-size: 20px;
-    margin-bottom: 12px;
-}
-
-.footer-middle ul,
-.footer-right ul {
-    list-style: none;
-    padding: 0;
-    font-size: 16px;
-}
-
-.footer-middle ul li,
-.footer-right ul li {
-    margin-bottom: 10px;
-}
-
-.footer-middle ul li a,
-.footer-right ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-middle ul li a:hover,
-.footer-right ul li a:hover {
-    color: var(--secondary-green); /* Hover effect for links */
-}
-
-.footer-bottom {
-    background-color: var(--secondary-green);
-    padding: 10px 0;
-}
-
-.footer-bottom p {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-/* Bottom Navigation */
-.bottom-navigation {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-item {
-    color: var(--text-gray);
-    text-decoration: none;
-    font-size: 24px;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
+/* ==========================
+   7. Responsive Design
+========================== */
+@media (max-width: 768px) {
     .main-content {
         grid-template-columns: 1fr;
     }
 
-    .main-image-container {
-        height: 400px;
-    }
-
-    .stats-footer {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .subheader {
-        flex-direction: column;
-        text-align: center;
-        padding: 24px 5%;
-    }
-
-    .subheader h2 {
-        margin-bottom: 16px;
+    .footer-content div {
+        width: 100%;
     }
 
     .stats-badge {
-        position: static;
-        margin-top: 16px;
-        font-size: 24px;
-    }
-
-    .quick-links {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-left,
-    .footer-middle,
-    .footer-right {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 24px;
-    }
-
-    .subheader h2 {
-        font-size: 28px;
-    }
-
-    .main-content {
-        padding: 24px 16px;
-    }
-
-    .stats-footer {
-        grid-template-columns: 1fr;
         margin-top: 20px;
     }
 }
