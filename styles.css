@@ -1,5 +1,5 @@
 /* ==========================
-   1. General Reset and Variables
+   1. Reset and Variables
 ========================== */
 :root {
     --primary-green: #4B7B48;
@@ -22,13 +22,13 @@
 body {
     background-color: var(--background-cream);
     font-family: 'Arial', sans-serif;
-    min-height: 100vh;
     line-height: 1.6;
     color: var(--text-gray);
+    min-height: 100vh;
 }
 
 /* ==========================
-   2. Header and Navigation Fixes
+   2. Header and Navigation
 ========================== */
 .header {
     background-color: var(--primary-green);
@@ -40,11 +40,23 @@ body {
     flex-wrap: wrap;
 }
 
+.header-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation Styling */
 .nav-bar {
     display: flex;
-    gap: 24px;
+    gap: 20px;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .nav-link {
@@ -52,35 +64,34 @@ body {
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
-    padding: 10px 16px;
+    padding: 8px 12px;
     border-radius: 6px;
-    transition: background-color 0.3s ease, padding 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .nav-link:hover {
     background-color: var(--secondary-green);
-    padding: 10px 18px;
 }
 
-/* Fix Dropdown Menu */
+/* Dropdown Styling */
 .dropdown {
     position: relative;
 }
 
 .dropbtn {
-    background-color: var(--primary-green);
+    background-color: transparent;
     color: white;
     font-size: 16px;
     font-weight: bold;
-    padding: 10px 16px;
+    padding: 10px 14px;
     border: none;
-    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .dropbtn:hover {
     background-color: var(--secondary-green);
+    border-radius: 6px;
 }
 
 .dropdown-content {
@@ -88,15 +99,16 @@ body {
     position: absolute;
     background-color: var(--card-white);
     border-radius: 6px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;
-    width: max-content;
-    min-width: 160px;
+    min-width: 180px;
+    top: 40px;
+    left: 0;
 }
 
 .dropdown-content a {
     color: var(--text-gray);
-    padding: 10px 14px;
+    padding: 12px 14px;
     display: block;
     text-decoration: none;
     transition: background-color 0.3s ease;
@@ -118,79 +130,113 @@ body {
     background-color: var(--secondary-green);
     padding: 20px 5%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    text-align: right;
 }
 
 .subheader h2 {
     color: white;
-    font-size: 32px;
-    margin-right: 30px;
+    font-size: 28px;
 }
 
-/* Remove Explore Button */
-.explore {
-    display: none !important;
-}
-
-/* Badge Styling */
+/* Badge Refinement */
 .stats-badge {
     background-color: var(--button-blue);
-    padding: 10px 22px;
+    padding: 10px 20px;
     border-radius: 18px;
     color: white;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     display: inline-block;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-left: 15px; /* Adds space between text and badge */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
-
 /* ==========================
    4. Main Content Fixes
 ========================== */
 .main-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 30px 5%;
-    align-items: start;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* Left Column Refinement */
+/* Left Column - Fix Width & Layout */
 .left-column {
     flex: 1;
-    min-width: 320px;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
+    text-align: left;
+    padding-right: 20px; /* Adds spacing between text & image */
 }
 
-/* Improved Help Button */
+/* Right Column - Ensure Image Alignment */
+.right-column {
+    flex: 1.5;
+    max-width: 600px;
+    text-align: center;
+}
+
+.main-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* "Need Food Today?" Section */
+.need-food h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+.need-food p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Help Button Refinement */
 .help-button {
-    display: inline-block;
+    display: block;
     background-color: var(--button-blue);
     color: white;
-    padding: 12px 20px;
+    padding: 14px 20px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: background 0.3s ease;
-    width: 90%; /* Matches card width */
     text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 320px;
     margin: auto;
 }
 
 .help-button:hover {
     background-color: #2A6BAA;
+    transform: scale(1.03);
 }
 
 /* Cards (Hours & Location, Ways to Help) */
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .link-card,
 .event-card {
     background: var(--card-white);
-    padding: 10px 14px;
+    padding: 14px 16px;
     border-radius: 12px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     text-decoration: none;
@@ -198,8 +244,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    min-height: 80px;
+    justify-content: center;
+    text-align: center;
+}
+
+.link-card:hover,
+.event-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .link-card h3,
@@ -207,12 +261,60 @@ body {
     font-size: 18px;
     font-weight: bold;
     color: var(--primary-green);
-    text-align: center;
 }
 
-.link-card:hover,
-.event-card:hover {
-    transform: scale(1.02);
+.link-card p,
+.event-card p {
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+/* "Coming Soon" Section */
+.upcoming-events h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.event-card h5 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.event-card p {
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+/* ==========================
+   6. Responsive Fixes
+========================== */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .left-column {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+        padding-right: 0;
+    }
+
+    .right-column {
+        max-width: 100%;
+    }
+
+    .help-button {
+        width: 90%;
+    }
+
+    .link-card,
+    .event-card {
+        width: 90%;
+    }
 }
 
 /* ==========================
@@ -221,48 +323,107 @@ body {
 .footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
-    padding: 30px 5%;
+    padding: 40px 5%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Footer Content Layout */
 .footer-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-content div {
-    flex: 1 1 30%;
-    margin: 10px;
+    gap: 30px;
+    max-width: 1100px;
+    width: 100%;
     text-align: left;
 }
 
-/* Remove Bullet Points */
+/* Footer Sections */
+.footer-content div {
+    flex: 1 1 300px;
+}
+
+/* Footer Titles */
+.footer-content h3,
+.footer-content h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Footer Links */
 .footer-content ul {
     list-style: none;
     padding-left: 0;
 }
 
-/* Footer Bottom */
+.footer-content ul li {
+    margin-bottom: 8px;
+}
+
+.footer-content a {
+    color: var(--highlight-yellow);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Bottom Footer Bar */
 .footer-bottom {
     background-color: var(--secondary-green);
-    padding: 10px 0;
+    padding: 12px 0;
     font-size: 14px;
     text-align: center;
+    width: 100%;
+    margin-top: 30px;
 }
+
+/* ==========================
+   6. Responsive Footer Fixes
+========================== */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-content div {
+        width: 100%;
+    }
+}
+
 
 /* ==========================
    6. Responsive Fixes
 ========================== */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .main-content {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-content {
         flex-direction: column;
         align-items: center;
+    }
+
+    .left-column {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .help-button {
+        width: 90%;
+    }
+
+    .link-card,
+    .event-card {
+        width: 90%;
     }
 
     .subheader {
