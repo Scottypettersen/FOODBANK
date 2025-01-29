@@ -6,12 +6,13 @@
     <title>CSML Food Bank - Feeding Our Community</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body><!-- Header -->
+<body>
+
+    <!-- Header -->
     <header class="header">
         <div class="header-container">
-            <h1>CSML FOOD BANK</h1>
+            <h1 class="logo-text">CSML FOOD BANK</h1>
             <nav class="nav-bar">
-                <!-- Dropdown for About -->
                 <div class="dropdown">
                     <button class="dropbtn">About</button>
                     <div class="dropdown-content">
@@ -20,8 +21,7 @@
                         <a href="facility.html">Our Facility</a>
                     </div>
                 </div>
-    
-                <!-- Dropdown for Help -->
+
                 <div class="dropdown">
                     <button class="dropbtn">Help</button>
                     <div class="dropdown-content">
@@ -30,8 +30,7 @@
                         <a href="hours-location.html">Hours & Location</a>
                     </div>
                 </div>
-    
-                <!-- Dropdown for Support -->
+
                 <div class="dropdown">
                     <button class="dropbtn">Support</button>
                     <div class="dropdown-content">
@@ -40,22 +39,17 @@
                         <a href="support-us.html">Support Us</a>
                     </div>
                 </div>
-    
-                <!-- Events -->
+
                 <a href="special-events.html" class="nav-link">Events</a>
-    
-                <!-- Contact -->
                 <a href="contact.html" class="nav-link">Contact Us</a>
             </nav>
         </div>
     </header>
-    
+
     <!-- Subheader -->
     <div class="subheader">
         <h2>Feeding Our Community</h2>
-        <div class="subheader-content">
-            <div class="stats-badge">33,000 Families Served</div>
-        </div>
+        <div class="stats-badge">33,000 Families Served</div>
     </div>
 
     <!-- Main Content -->
@@ -92,7 +86,22 @@
                 <img src="INDEXCOVER.jpg" alt="Diverse group of volunteers working together at CSML Food Bank" class="main-image">
             </figure>
         </section>
-    </main>
+    </main> <!-- Popup Modal -->
+    <div id="popup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Welcome to the CSML Food Bank Redesign</h2>
+            <p class="modal-text">
+                This website is a redesign of the original CSML Food Bank site to improve user experience and accessibility. Done by Andrew Kazanis for UX class
+            </p>
+            <p class="modal-text">
+                Visit the original site here: 
+                <a href="https://www.mlfood.org/" target="_blank" class="modal-link"> CSML Food Bank</a>
+            </p>
+            <button id="close-popup">Got it!</button>
+            
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -126,5 +135,9 @@
             <p>&copy; 2025 CSML Food Bank. All rights reserved.</p>
         </div>
     </footer>
+
+   
+    <script src="script.js"></script>
 </body>
 </html>
+
