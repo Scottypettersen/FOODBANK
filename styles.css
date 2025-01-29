@@ -1,5 +1,5 @@
 /* ==========================
-   1. Reset and Variables
+   1. General Reset and Variables
 ========================== */
 :root {
     --primary-green: #4B7B48;
@@ -22,13 +22,13 @@
 body {
     background-color: var(--background-cream);
     font-family: 'Arial', sans-serif;
+    min-height: 100vh;
     line-height: 1.6;
     color: var(--text-gray);
-    min-height: 100vh;
 }
 
 /* ==========================
-   2. Header and Navigation
+   2. Header and Navigation Fixes
 ========================== */
 .header {
     background-color: var(--primary-green);
@@ -38,60 +38,37 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
 }
 
-.header-container {
+.nav-bar {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 }
 
-.header h1 {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Navigation Styling */
-.nav-bar {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.nav-link {
+.nav-link, .dropbtn {
     color: white;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
-    padding: 8px 12px;
+    padding: 10px 16px;
     border-radius: 6px;
-    transition: background-color 0.3s ease;
-}
-
-.nav-link:hover {
-    background-color: var(--secondary-green);
-}
-
-/* Dropdown Styling */
-.dropdown {
-    position: relative;
-}
-
-.dropbtn {
-    background-color: transparent;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 14px;
+    background: none;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.dropbtn:hover {
+.nav-link:hover, .dropbtn:hover {
     background-color: var(--secondary-green);
-    border-radius: 6px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
 .dropdown-content {
@@ -101,26 +78,28 @@ body {
     border-radius: 6px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;
-    min-width: 180px;
-    top: 40px;
+    min-width: 220px;
     left: 0;
+    top: 40px;
+    padding: 10px 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 .dropdown-content a {
-    color: var(--text-gray);
-    padding: 12px 14px;
     display: block;
+    padding: 12px 18px;
     text-decoration: none;
+    color: var(--text-gray);
+    font-size: 14px;
     transition: background-color 0.3s ease;
 }
 
 .dropdown-content a:hover {
     background-color: var(--secondary-green);
     color: white;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 /* ==========================
@@ -132,6 +111,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .subheader h2 {
@@ -139,7 +119,6 @@ body {
     font-size: 28px;
 }
 
-/* Badge Refinement */
 .stats-badge {
     background-color: var(--button-blue);
     padding: 10px 20px;
@@ -147,44 +126,35 @@ body {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    display: inline-block;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
+
 /* ==========================
    4. Main Content Fixes
 ========================== */
 .main-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;
-    gap: 50px;
+    gap: 40px;
     padding: 40px 5%;
     max-width: 1200px;
     margin: auto;
 }
 
-/* Left Column - Fix Width & Layout */
 .left-column {
     flex: 1;
-    max-width: 500px;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
+    align-items: flex-start;
     text-align: left;
-    padding-right: 20px; /* Adds spacing between text & image */
 }
 
-/* Right Column - Ensure Image Alignment */
 .right-column {
-    flex: 1.5;
-    max-width: 600px;
+    flex: 2;
+    max-width: 700px;
     text-align: center;
-}
-
-.main-image-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 .main-image {
@@ -193,19 +163,7 @@ body {
     border-radius: 12px;
 }
 
-/* "Need Food Today?" Section */
-.need-food h3 {
-    font-size: 22px;
-    font-weight: bold;
-    color: var(--primary-green);
-}
-
-.need-food p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-/* Help Button Refinement */
+/* Help Button */
 .help-button {
     display: block;
     background-color: var(--button-blue);
@@ -216,7 +174,6 @@ body {
     font-weight: bold;
     text-align: center;
     transition: background 0.3s ease, transform 0.2s ease;
-    width: 100%;
     max-width: 320px;
     margin: auto;
 }
@@ -226,96 +183,182 @@ body {
     transform: scale(1.03);
 }
 
-/* Cards (Hours & Location, Ways to Help) */
-.quick-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+
+
+/* ==========================
+   1. General Reset and Variables
+========================== */
+:root {
+    --primary-green: #4B7B48;
+    --secondary-green: #A3B686;
+    --background-cream: #FFF8E7;
+    --text-gray: #333;
+    --card-white: #FFFFFF;
+    --button-blue: #3498DB;
+    --highlight-yellow: #F1C40F;
+    --footer-bg: #3E4E56;
+    --footer-text: #E0E0E0;
 }
 
-.link-card,
-.event-card {
-    background: var(--card-white);
-    padding: 14px 16px;
-    border-radius: 12px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    transition: transform 0.2s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-height: 80px;
-    justify-content: center;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.link-card:hover,
-.event-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-.link-card h3,
-.event-card h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: var(--primary-green);
-}
-
-.link-card p,
-.event-card p {
-    font-size: 14px;
-    color: var(--text-gray);
-}
-
-/* "Coming Soon" Section */
-.upcoming-events h4 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.event-card h5 {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.event-card p {
-    font-size: 14px;
+body {
+    background-color: var(--background-cream);
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    line-height: 1.6;
     color: var(--text-gray);
 }
 
 /* ==========================
-   6. Responsive Fixes
+   7. Contact Page Styling
 ========================== */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 50px 5%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 450px;
+}
+
+.contact-info h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 550px;
+    background-color: var(--card-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--text-gray);
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: var(--button-blue);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #2A6BAA;
+}
+
 @media (max-width: 1024px) {
-    .main-content {
+    .contact-container {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
-    }
-
-    .left-column {
-        max-width: 100%;
         text-align: center;
-        align-items: center;
-        padding-right: 0;
     }
-
-    .right-column {
+    .contact-info, .contact-form {
         max-width: 100%;
     }
+}/* ==========================
+   About Page Styling
+========================== */
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
 
-    .help-button {
-        width: 90%;
-    }
+.about-section {
+    background-color: var(--card-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    .link-card,
-    .event-card {
-        width: 90%;
+.team-board-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.team-section, .board-section {
+    flex: 1;
+    min-width: 320px;
+    background-color: var(--card-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.styled-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.styled-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--secondary-green);
+}
+
+.styled-list li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 1024px) {
+    .team-board-container {
+        flex-direction: column;
     }
 }
+
 
 /* ==========================
    5. Footer Refinement
@@ -323,45 +366,24 @@ body {
 .footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
-    padding: 40px 5%;
+    padding: 50px 5%;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-/* Footer Content Layout */
 .footer-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
     max-width: 1100px;
-    width: 100%;
+    margin: auto;
     text-align: left;
 }
 
-/* Footer Sections */
-.footer-content div {
-    flex: 1 1 300px;
-}
-
-/* Footer Titles */
-.footer-content h3,
-.footer-content h4 {
-    font-size: 18px;
+.footer-content h3, .footer-content h4 {
+    font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
-}
-
-/* Footer Links */
-.footer-content ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.footer-content ul li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .footer-content a {
@@ -376,31 +398,14 @@ body {
     text-decoration: underline;
 }
 
-/* Bottom Footer Bar */
 .footer-bottom {
     background-color: var(--secondary-green);
-    padding: 12px 0;
+    padding: 14px 0;
     font-size: 14px;
     text-align: center;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 40px;
 }
-
-/* ==========================
-   6. Responsive Footer Fixes
-========================== */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-
-    .footer-content div {
-        width: 100%;
-    }
-}
-
 
 /* ==========================
    6. Responsive Fixes
@@ -410,24 +415,16 @@ body {
         flex-direction: column;
         align-items: center;
     }
-
     .left-column {
         max-width: 100%;
         text-align: center;
         align-items: center;
     }
-
-    .help-button {
-        width: 90%;
+    .right-column {
+        max-width: 100%;
     }
-
-    .link-card,
-    .event-card {
-        width: 90%;
-    }
-
-    .subheader {
-        justify-content: center;
-        text-align: center;
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
     }
 }
